@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41F314531A5387A1009BED9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F314521A5387A1009BED9B /* AppDelegate.swift */; };
+		41F314551A5387A1009BED9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F314541A5387A1009BED9B /* ViewController.swift */; };
+		41F314581A5387A1009BED9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F314561A5387A1009BED9B /* Main.storyboard */; };
+		41F3145A1A5387A1009BED9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F314591A5387A1009BED9B /* Images.xcassets */; };
+		41F3145D1A5387A1009BED9B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41F3145B1A5387A1009BED9B /* LaunchScreen.xib */; };
+		41F314691A5387A1009BED9B /* SleepBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F314681A5387A1009BED9B /* SleepBotTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41F314631A5387A1009BED9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41F314451A5387A1009BED9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41F3144C1A5387A1009BED9B;
+			remoteInfo = SleepBot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41F3144D1A5387A1009BED9B /* SleepBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F314511A5387A1009BED9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F314521A5387A1009BED9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		41F314541A5387A1009BED9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		41F314571A5387A1009BED9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41F314591A5387A1009BED9B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		41F3145C1A5387A1009BED9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		41F314621A5387A1009BED9B /* SleepBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41F314671A5387A1009BED9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F314681A5387A1009BED9B /* SleepBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepBotTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41F3144A1A5387A1009BED9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41F3145F1A5387A1009BED9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41F314441A5387A1009BED9B = {
+			isa = PBXGroup;
+			children = (
+				41F3144F1A5387A1009BED9B /* SleepBot */,
+				41F314651A5387A1009BED9B /* SleepBotTests */,
+				41F3144E1A5387A1009BED9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41F3144E1A5387A1009BED9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41F3144D1A5387A1009BED9B /* SleepBot.app */,
+				41F314621A5387A1009BED9B /* SleepBotTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41F3144F1A5387A1009BED9B /* SleepBot */ = {
+			isa = PBXGroup;
+			children = (
+				41F314521A5387A1009BED9B /* AppDelegate.swift */,
+				41F314541A5387A1009BED9B /* ViewController.swift */,
+				41F314561A5387A1009BED9B /* Main.storyboard */,
+				41F314591A5387A1009BED9B /* Images.xcassets */,
+				41F3145B1A5387A1009BED9B /* LaunchScreen.xib */,
+				41F314501A5387A1009BED9B /* Supporting Files */,
+			);
+			path = SleepBot;
+			sourceTree = "<group>";
+		};
+		41F314501A5387A1009BED9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41F314511A5387A1009BED9B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41F314651A5387A1009BED9B /* SleepBotTests */ = {
+			isa = PBXGroup;
+			children = (
+				41F314681A5387A1009BED9B /* SleepBotTests.swift */,
+				41F314661A5387A1009BED9B /* Supporting Files */,
+			);
+			path = SleepBotTests;
+			sourceTree = "<group>";
+		};
+		41F314661A5387A1009BED9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41F314671A5387A1009BED9B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41F3144C1A5387A1009BED9B /* SleepBot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41F3146C1A5387A1009BED9B /* Build configuration list for PBXNativeTarget "SleepBot" */;
+			buildPhases = (
+				41F314491A5387A1009BED9B /* Sources */,
+				41F3144A1A5387A1009BED9B /* Frameworks */,
+				41F3144B1A5387A1009BED9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SleepBot;
+			productName = SleepBot;
+			productReference = 41F3144D1A5387A1009BED9B /* SleepBot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		41F314611A5387A1009BED9B /* SleepBotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41F3146F1A5387A1009BED9B /* Build configuration list for PBXNativeTarget "SleepBotTests" */;
+			buildPhases = (
+				41F3145E1A5387A1009BED9B /* Sources */,
+				41F3145F1A5387A1009BED9B /* Frameworks */,
+				41F314601A5387A1009BED9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41F314641A5387A1009BED9B /* PBXTargetDependency */,
+			);
+			name = SleepBotTests;
+			productName = SleepBotTests;
+			productReference = 41F314621A5387A1009BED9B /* SleepBotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41F314451A5387A1009BED9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = JMGSE;
+				TargetAttributes = {
+					41F3144C1A5387A1009BED9B = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					41F314611A5387A1009BED9B = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 41F3144C1A5387A1009BED9B;
+					};
+				};
+			};
+			buildConfigurationList = 41F314481A5387A1009BED9B /* Build configuration list for PBXProject "SleepBot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41F314441A5387A1009BED9B;
+			productRefGroup = 41F3144E1A5387A1009BED9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41F3144C1A5387A1009BED9B /* SleepBot */,
+				41F314611A5387A1009BED9B /* SleepBotTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41F3144B1A5387A1009BED9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F314581A5387A1009BED9B /* Main.storyboard in Resources */,
+				41F3145D1A5387A1009BED9B /* LaunchScreen.xib in Resources */,
+				41F3145A1A5387A1009BED9B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41F314601A5387A1009BED9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41F314491A5387A1009BED9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F314551A5387A1009BED9B /* ViewController.swift in Sources */,
+				41F314531A5387A1009BED9B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41F3145E1A5387A1009BED9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F314691A5387A1009BED9B /* SleepBotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41F314641A5387A1009BED9B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41F3144C1A5387A1009BED9B /* SleepBot */;
+			targetProxy = 41F314631A5387A1009BED9B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41F314561A5387A1009BED9B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41F314571A5387A1009BED9B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		41F3145B1A5387A1009BED9B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41F3145C1A5387A1009BED9B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41F3146A1A5387A1009BED9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		41F3146B1A5387A1009BED9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		41F3146D1A5387A1009BED9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SleepBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41F3146E1A5387A1009BED9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SleepBot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		41F314701A5387A1009BED9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SleepBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepBot.app/SleepBot";
+			};
+			name = Debug;
+		};
+		41F314711A5387A1009BED9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SleepBotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SleepBot.app/SleepBot";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41F314481A5387A1009BED9B /* Build configuration list for PBXProject "SleepBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41F3146A1A5387A1009BED9B /* Debug */,
+				41F3146B1A5387A1009BED9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41F3146C1A5387A1009BED9B /* Build configuration list for PBXNativeTarget "SleepBot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41F3146D1A5387A1009BED9B /* Debug */,
+				41F3146E1A5387A1009BED9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		41F3146F1A5387A1009BED9B /* Build configuration list for PBXNativeTarget "SleepBotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41F314701A5387A1009BED9B /* Debug */,
+				41F314711A5387A1009BED9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41F314451A5387A1009BED9B /* Project object */;
+}
