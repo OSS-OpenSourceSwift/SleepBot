@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EYV-7C-0yy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Dashboard-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="DashViewController" customModule="SleepBot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +15,125 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4B-ba-Yck">
+                                <rect key="frame" x="243" y="184" width="115" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4MF-Nc-spK"/>
+                                    <constraint firstAttribute="width" constant="115" id="ScO-PO-wDe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Go to bed">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fwo-TR-NCS" kind="show" id="ThI-S1-rGZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="D4B-ba-Yck" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Ge0-by-ifD"/>
+                            <constraint firstItem="D4B-ba-Yck" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="120" id="J7v-JF-zyT"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="D4B-ba-Yck" secondAttribute="bottom" constant="382" id="JLs-Jy-gmd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JLs-Jy-gmd"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Dashboard" id="HBx-QB-DeO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1272" y="403"/>
+        </scene>
+        <!--Sleep Event View Controller-->
+        <scene sceneID="zgu-yh-DCe">
+            <objects>
+                <viewController id="fwo-TR-NCS" customClass="SleepEventViewController" customModule="SleepBot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VfW-3F-gT1"/>
+                        <viewControllerLayoutGuide type="bottom" id="kHb-8W-MHP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9DP-UE-Yhn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-q5-aqw">
+                                <rect key="frame" x="176" y="80" width="249" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="DX1-EB-s6e"/>
+                                    <constraint firstAttribute="width" constant="249" id="T3Y-Es-aws"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yS-MF-7ZY">
+                                <rect key="frame" x="231" y="423" width="139" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="dQs-1M-tVb"/>
+                                    <constraint firstAttribute="height" constant="27" id="hr6-N9-qkl"/>
+                                </constraints>
+                                <state key="normal" title="Start Sleeping">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="update:" destination="fwo-TR-NCS" eventType="touchUpInside" id="X5h-PZ-mdk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="kHb-8W-MHP" firstAttribute="top" secondItem="8yS-MF-7ZY" secondAttribute="bottom" constant="150" id="3an-oi-cFA"/>
+                            <constraint firstItem="eho-q5-aqw" firstAttribute="centerX" secondItem="8yS-MF-7ZY" secondAttribute="centerX" id="60M-Py-5o0"/>
+                            <constraint firstItem="8yS-MF-7ZY" firstAttribute="centerX" secondItem="eho-q5-aqw" secondAttribute="centerX" id="fgP-OE-j03"/>
+                            <constraint firstItem="eho-q5-aqw" firstAttribute="top" secondItem="VfW-3F-gT1" secondAttribute="bottom" constant="60" id="gK9-V2-rec"/>
+                            <constraint firstItem="eho-q5-aqw" firstAttribute="centerX" secondItem="9DP-UE-Yhn" secondAttribute="centerX" id="iRz-Bv-jub"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fgP-OE-j03"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="3ys-8R-5TP" appends="YES" id="jSc-lr-VEf"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="infoButton" destination="8yS-MF-7ZY" id="NuY-Dm-mJE"/>
+                        <outlet property="infoLabel" destination="eho-q5-aqw" id="zgK-Qr-pRN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chk-bS-INZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3ys-8R-5TP">
+                    <connections>
+                        <action selector="update:" destination="fwo-TR-NCS" id="i0I-nF-Qc8"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2038" y="403"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Y5-qd-iTr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EYV-7C-0yy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sYG-Hc-Kqt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="0GK-yc-zhX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xb-lJ-8x8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="1064"/>
         </scene>
     </scenes>
 </document>
