@@ -61,16 +61,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Message the app gives the user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-q5-aqw">
-                                <rect key="frame" x="161" y="80" width="279" height="136"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="DX1-EB-s6e"/>
-                                    <constraint firstAttribute="width" constant="249" id="T3Y-Es-aws"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yS-MF-7ZY">
                                 <rect key="frame" x="199" y="419" width="203" height="30"/>
                                 <constraints>
@@ -83,15 +73,37 @@
                                     <action selector="update:" destination="fwo-TR-NCS" eventType="touchUpInside" id="N5x-Hj-BgE"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXF-Sr-DnR">
+                                <rect key="frame" x="180" y="280" width="240" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="rAQ-Ko-576"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message the app gives the user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-q5-aqw">
+                                <rect key="frame" x="176" y="124" width="249" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="XMH-L1-px0"/>
+                                    <constraint firstAttribute="width" constant="249" id="uhW-ce-mgG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="kHb-8W-MHP" firstAttribute="top" secondItem="8yS-MF-7ZY" secondAttribute="bottom" constant="151" id="3an-oi-cFA"/>
-                            <constraint firstItem="eho-q5-aqw" firstAttribute="centerX" secondItem="8yS-MF-7ZY" secondAttribute="centerX" id="60M-Py-5o0"/>
+                            <constraint firstItem="eho-q5-aqw" firstAttribute="centerX" secondItem="YXF-Sr-DnR" secondAttribute="centerX" id="Lxe-XZ-Lrc"/>
+                            <constraint firstItem="eho-q5-aqw" firstAttribute="centerX" secondItem="9DP-UE-Yhn" secondAttribute="centerX" id="cXQ-eS-4SH"/>
+                            <constraint firstItem="eho-q5-aqw" firstAttribute="top" secondItem="VfW-3F-gT1" secondAttribute="bottom" constant="60" id="db7-ns-shO"/>
                             <constraint firstItem="8yS-MF-7ZY" firstAttribute="centerX" secondItem="eho-q5-aqw" secondAttribute="centerX" id="fgP-OE-j03"/>
-                            <constraint firstItem="eho-q5-aqw" firstAttribute="top" secondItem="VfW-3F-gT1" secondAttribute="bottom" constant="60" id="gK9-V2-rec"/>
-                            <constraint firstItem="eho-q5-aqw" firstAttribute="centerX" secondItem="9DP-UE-Yhn" secondAttribute="centerX" id="iRz-Bv-jub"/>
+                            <constraint firstItem="8yS-MF-7ZY" firstAttribute="top" secondItem="YXF-Sr-DnR" secondAttribute="bottom" constant="55" id="vZ1-8T-Oeu"/>
+                            <constraint firstItem="YXF-Sr-DnR" firstAttribute="top" secondItem="eho-q5-aqw" secondAttribute="bottom" constant="20" id="ypc-C5-kar"/>
+                            <constraint firstItem="YXF-Sr-DnR" firstAttribute="centerX" secondItem="8yS-MF-7ZY" secondAttribute="centerX" id="zZ9-aT-IMH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -103,6 +115,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="StatTextView" destination="YXF-Sr-DnR" id="nem-wa-EAW"/>
                         <outlet property="infoButton" destination="8yS-MF-7ZY" id="NuY-Dm-mJE"/>
                         <outlet property="infoLabel" destination="eho-q5-aqw" id="zgK-Qr-pRN"/>
                     </connections>
