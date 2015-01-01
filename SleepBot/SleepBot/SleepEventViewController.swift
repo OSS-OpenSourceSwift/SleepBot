@@ -24,7 +24,7 @@ enum SleepEventMode {
         case .OutOfBed:
             return ("It's a lovely morning!", "Record this nap")
         case .Recorded:
-            return ("Ok, score recorded successfully", "")
+            return ("Ok, nap recorded successfully", "")
         }
     }
     
@@ -35,10 +35,10 @@ class SleepEventViewController: UIViewController {
     var healthStore: HKHealthStore?
     
     var mode: SleepEventMode = SleepEventMode.NotStarted {
-        didSet {
-            let (labelText, buttonText) = mode.labelStrings()
+        willSet {
+            let (labelText, buttonText) = newValue.labelStrings()
             infoLabel.text = labelText
-            infoButton.titleLabel?.text = buttonText
+            infoButton.setTitle(buttonText, forState: UIControlState.Normal)
         }
     }
     
@@ -56,13 +56,11 @@ class SleepEventViewController: UIViewController {
     @IBOutlet weak var infoButton: UIButton!
     
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
+        mode = .NotStarted
     }
-    
 
     func recordSleepTimes() {
         let sleepType = HKCategoryType.categoryTypeForIdentifier(HKCategoryTypeIdentifierSleepAnalysis)
@@ -77,6 +75,7 @@ class SleepEventViewController: UIViewController {
     
 
     @IBAction func update(sender: AnyObject) {
+        println("Update sent by: \(sender)")
         switch mode {
         case .NotStarted:
             startTime = NSDate(timeIntervalSinceNow: 0)

@@ -61,8 +61,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to start timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-q5-aqw">
-                                <rect key="frame" x="176" y="80" width="249" height="136"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Message the app gives the user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eho-q5-aqw">
+                                <rect key="frame" x="161" y="80" width="279" height="136"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="DX1-EB-s6e"/>
                                     <constraint firstAttribute="width" constant="249" id="T3Y-Es-aws"/>
@@ -72,23 +72,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yS-MF-7ZY">
-                                <rect key="frame" x="231" y="423" width="139" height="27"/>
+                                <rect key="frame" x="199" y="419" width="203" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="139" id="dQs-1M-tVb"/>
-                                    <constraint firstAttribute="height" constant="27" id="hr6-N9-qkl"/>
+                                    <constraint firstAttribute="width" constant="203" id="dQs-1M-tVb"/>
+                                    <constraint firstAttribute="height" constant="30" id="hr6-N9-qkl"/>
                                 </constraints>
-                                <state key="normal" title="Start Sleeping">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Button Text"/>
                                 <connections>
-                                    <action selector="update:" destination="fwo-TR-NCS" eventType="touchUpInside" id="X5h-PZ-mdk"/>
+                                    <action selector="update:" destination="fwo-TR-NCS" eventType="touchUpInside" id="N5x-Hj-BgE"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="kHb-8W-MHP" firstAttribute="top" secondItem="8yS-MF-7ZY" secondAttribute="bottom" constant="150" id="3an-oi-cFA"/>
+                            <constraint firstItem="kHb-8W-MHP" firstAttribute="top" secondItem="8yS-MF-7ZY" secondAttribute="bottom" constant="151" id="3an-oi-cFA"/>
                             <constraint firstItem="eho-q5-aqw" firstAttribute="centerX" secondItem="8yS-MF-7ZY" secondAttribute="centerX" id="60M-Py-5o0"/>
                             <constraint firstItem="8yS-MF-7ZY" firstAttribute="centerX" secondItem="eho-q5-aqw" secondAttribute="centerX" id="fgP-OE-j03"/>
                             <constraint firstItem="eho-q5-aqw" firstAttribute="top" secondItem="VfW-3F-gT1" secondAttribute="bottom" constant="60" id="gK9-V2-rec"/>
