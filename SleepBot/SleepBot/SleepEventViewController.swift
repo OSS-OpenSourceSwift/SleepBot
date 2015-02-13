@@ -9,48 +9,31 @@
 import UIKit
 import HealthKit
 
-enum SleepEventMode {
-    case NotStarted
-    case InBed
-    case OutOfBed
-    case Recorded
-    
-    func labelStrings() -> (String, String)
-    {
-        switch self {
-        case .NotStarted:
-            return ("Tap to start sleeping", "Go to bed")
-        case .InBed:
-            return ("Ok, get in bed now.", "Wake up")
-        case .OutOfBed:
-            return ("It's a lovely morning!", "Record this nap")
-        case .Recorded:
-            return ("Ok, nap recorded successfully", "")
-        }
-    }
-    
-}
+//enum SleepEventMode {
+//    case NotStarted
+//    case InBed
+//    case OutOfBed
+//    case Recorded
+//    
+//    func labelStrings() -> (String, String)
+//    {
+//        switch self {
+//        case .NotStarted:
+//            return ("Tap to start sleeping", "Go to bed")
+//        case .InBed:
+//            return ("Ok, get in bed now.", "Wake up")
+//        case .OutOfBed:
+//            return ("It's a lovely morning!", "Record this nap")
+//        case .Recorded:
+//            return ("Ok, nap recorded successfully", "")
+//        }
+//    }
+//    
+//}
 
 class SleepEventViewController: UIViewController {
 
     var healthStore: HKHealthStore?
-    
-    var mode: SleepEventMode = SleepEventMode.NotStarted {
-        willSet {
-            let (labelText, buttonText) = newValue.labelStrings()
-            infoLabel.text = labelText
-            infoButton.setTitle(buttonText, forState: UIControlState.Normal)
-        }
-    }
-    
-    var inProgress: Bool {
-        get {
-            return NSUserDefaults.standardUserDefaults().boolForKey("IN_PROGRESS")
-        }
-        set {
-            NSUserDefaults.standardUserDefaults().setBool(newValue, forKey: "IN_PROGRESS")
-        }
-    }
     
     var startTime: NSDate? {
         get {
@@ -74,22 +57,6 @@ class SleepEventViewController: UIViewController {
             return endTime?.timeIntervalSinceDate(st)
         } else {return nil}
     }
-    
-    
-    @IBOutlet weak var infoLabel: UILabel!
-    @IBOutlet weak var infoButton: UIButton!
-    @IBOutlet weak var statTextView: UITextView!
-
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        if inProgress {
-            // In this case, the start time has already been entered
-            mode = .InBed
-        } else {
-            mode = .NotStarted
-        }
-    }
 
     func recordSleepTimes()
     {
@@ -102,38 +69,5 @@ class SleepEventViewController: UIViewController {
             }
         }
     }
-
-    @IBAction func update(sender: AnyObject)
-    {
-        println("Update sent by: \(sender)")
-        switch mode {
-        case .NotStarted:
-            startTime = NSDate(timeIntervalSinceNow: 0)
-            mode = .InBed
-            inProgress = true
-        case .InBed:
-            endTime = NSDate(timeIntervalSinceNow: 0)
-            mode = .OutOfBed
-            inProgress = false
-            statTextView.text = startTime?.descriptionBetweenDate(endTime!)
-            println(startTime)
-            println(endTime)
-        case .OutOfBed:
-            recordSleepTimes()
-            mode = .Recorded
-            startTime = nil
-            endTime = nil
-        default:
-            break
-        }
-    }
-    
-    deinit {
-        if (!inProgress) {
-            startTime = nil
-            endTime = nil
-        }
-    }
-
 
 }

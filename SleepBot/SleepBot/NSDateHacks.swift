@@ -14,7 +14,8 @@ public enum DateClipInterval {
     
     typealias DateClippingBlock = (NSDateComponents) -> NSDateComponents
     
-    private func clipBlock() -> DateClippingBlock {
+    private func clipBlock() -> DateClippingBlock
+    {
         switch self {
         case .ThirtyMinutes:
             return { (components: NSDateComponents) -> NSDateComponents in
@@ -45,8 +46,8 @@ public enum DateClipInterval {
 extension NSDate {
     // MARK - clipping
     
-    
-    public class func closestIntervalToDate(date: NSDate, interval: DateClipInterval) -> NSDate? {
+    public class func closestIntervalToDate(date: NSDate, interval: DateClipInterval) -> NSDate?
+    {
         let cal = NSCalendar.currentCalendar()
         let flags: NSCalendarUnit = .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute
         let componentsOfDate = cal.components(flags, fromDate: date)
@@ -56,7 +57,8 @@ extension NSDate {
     
     // MARK - description between two times
     
-    public func descriptionBetweenDate(date: NSDate) -> String {
+    public func descriptionBetweenDate(date: NSDate) -> String
+    {
         let cal = NSCalendar.currentCalendar()
         let flags: NSCalendarUnit = .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute
         let components = cal.components(flags, fromDate: self, toDate: date, options: NSCalendarOptions.allZeros)
@@ -66,4 +68,25 @@ extension NSDate {
         descBetween += "Minutes: \(components.minute)"
         return descBetween
     }
+
+    // MARK - comparison
+    public func isEarlierThan(other: NSDate) -> Bool
+    {
+        switch compare(other) {
+        case .OrderedAscending:
+            return true
+        default: // NSOrderedSame or NSOrderedDescending
+            return false
+        }
+    }
+    public func isLaterThan(other: NSDate) -> Bool
+    {
+        switch compare(other) {
+        case .OrderedDescending:
+            return true
+        default:
+            return false
+        }
+    }
+
 }
