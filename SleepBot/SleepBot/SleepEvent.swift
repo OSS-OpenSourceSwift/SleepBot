@@ -1,39 +1,22 @@
 //
-//  SleepEventViewController.swift
+//  SleepEvent.swift
 //  SleepBot
 //
-//  Created by JJ Garzella on 12/30/14.
-//  Copyright (c) 2014 JMGSE. All rights reserved.
+//  Created by JJ Garzella on 3/29/15.
+//  Copyright (c) 2015 JMGSE. All rights reserved.
 //
 
 import UIKit
 import HealthKit
 
-//enum SleepEventMode {
-//    case NotStarted
-//    case InBed
-//    case OutOfBed
-//    case Recorded
-//    
-//    func labelStrings() -> (String, String)
-//    {
-//        switch self {
-//        case .NotStarted:
-//            return ("Tap to start sleeping", "Go to bed")
-//        case .InBed:
-//            return ("Ok, get in bed now.", "Wake up")
-//        case .OutOfBed:
-//            return ("It's a lovely morning!", "Record this nap")
-//        case .Recorded:
-//            return ("Ok, nap recorded successfully", "")
-//        }
-//    }
-//    
-//}
 
-class SleepEventViewController: UIViewController {
-
-    var healthStore: HKHealthStore? // this must be externally set
+class SleepEvent {
+    
+    weak let healthStore: HKHealthStore
+    
+    init(healthStore: HKHealthStore) {
+        self.healthStore = healthStore
+    }
     
     var startTime: NSDate? {
         get {
@@ -57,17 +40,16 @@ class SleepEventViewController: UIViewController {
             return endTime?.timeIntervalSinceDate(st)
         } else {return nil}
     }
-
-    func recordSleepTimes()
+    
+    func save()
     {
         let sleepType = HKCategoryType.categoryTypeForIdentifier(HKCategoryTypeIdentifierSleepAnalysis)
         let inBedValue = HKCategoryValueSleepAnalysis.InBed.rawValue
         let sleepSample = HKCategorySample(type: sleepType, value: inBedValue, startDate: startTime, endDate: endTime)
-        healthStore?.saveObject(sleepSample) { (Bool success, NSError error) -> Void in
+        healthStore.saveObject(sleepSample) { (Bool success, NSError error) -> Void in
             if (!success) {
                 println(error)
             }
         }
     }
-
 }

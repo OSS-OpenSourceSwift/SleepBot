@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		411DD6B31AC89FD600A71081 /* SleepEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411DD6B21AC89FD600A71081 /* SleepEvent.swift */; };
 		417980151A55BFE00044AF68 /* NSDateHacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417980141A55BFE00044AF68 /* NSDateHacks.swift */; };
 		418A93061A8CF46400D8D1C1 /* TouchSleepEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A93051A8CF46400D8D1C1 /* TouchSleepEventViewController.swift */; };
 		418A93081A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A93071A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		411DD6B21AC89FD600A71081 /* SleepEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepEvent.swift; sourceTree = "<group>"; };
 		417980141A55BFE00044AF68 /* NSDateHacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateHacks.swift; sourceTree = "<group>"; };
 		418A93051A8CF46400D8D1C1 /* TouchSleepEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchSleepEventViewController.swift; sourceTree = "<group>"; };
 		418A93071A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualSleepEventViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				41F314721A538CC5009BED9B /* SleepEventViewController.swift */,
 				418A93051A8CF46400D8D1C1 /* TouchSleepEventViewController.swift */,
 				418A93071A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift */,
+				411DD6B21AC89FD600A71081 /* SleepEvent.swift */,
 			);
 			name = "Recording events";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				417980151A55BFE00044AF68 /* NSDateHacks.swift in Sources */,
 				418A93061A8CF46400D8D1C1 /* TouchSleepEventViewController.swift in Sources */,
 				41F314751A539937009BED9B /* DashViewController.swift in Sources */,
+				411DD6B31AC89FD600A71081 /* SleepEvent.swift in Sources */,
 				41F314731A538CC5009BED9B /* SleepEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

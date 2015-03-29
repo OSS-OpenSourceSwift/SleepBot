@@ -26,13 +26,13 @@ class ManualSleepEventViewController: SleepEventViewController, UITableViewDeleg
     
     // View Lifecycle
     
-    override func viewDidLoad()
+    override func viewDidAppear(animated: Bool)
     {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
         let now = NSDate(timeIntervalSinceNow: 0)
         datePicker.date = now
-        startTime = now
-        endTime = now
+        if startTime == nil {startTime = now}
+        if endTime == nil {endTime = now}
         updateLabels()
     }
     
@@ -41,6 +41,11 @@ class ManualSleepEventViewController: SleepEventViewController, UITableViewDeleg
     func updateLabels()
     {
         // Use NSDateFormatter
+        let format = NSDateFormatter()
+        format.dateStyle = .MediumStyle
+        format.timeStyle = .MediumStyle
+        startLabel.text = format.stringFromDate(startTime!)
+        endLabel.text = format.stringFromDate(endTime!)
     }
     
     @IBAction func updateTime(sender: UIDatePicker)
@@ -64,13 +69,11 @@ class ManualSleepEventViewController: SleepEventViewController, UITableViewDeleg
         
     }
     
-    @IBAction func dismiss(sender: AnyObject)
+    @IBAction func addSleepEvent(sender: AnyObject)
     {
         recordSleepTimes()
-        presentingViewController?.dismissViewControllerAnimated(true) {
-            
-        }
         
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     // Table View Delegate
