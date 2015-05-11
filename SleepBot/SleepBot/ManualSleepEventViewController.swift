@@ -7,9 +7,23 @@
 //
 
 import UIKit
+import HealthKit
 
-class ManualSleepEventViewController: SleepEventViewController, UITableViewDelegate  {
 
+
+private enum TimeType: Int {
+    case InBed = 0, OutOfBed
+}
+
+class ManualSleepEventViewController: UIViewController, SleepEventHandler, TableViewSelectedIndexDelegate  {
+
+    var event: SleepEvent!
+    var healthStore: HKHealthStore? {
+        didSet {
+            event = SleepEvent(healthStore: healthStore!)
+            
+        }
+    }
     
     // Properties and declarations
     
@@ -18,11 +32,9 @@ class ManualSleepEventViewController: SleepEventViewController, UITableViewDeleg
     @IBOutlet weak var startLabel: UILabel!
     @IBOutlet weak var endLabel: UILabel!
     
-    enum TimeType: Int {
-        case InBed = 0, OutOfBed
-    }
     
-    var selectedIndex = TimeType.InBed;
+    
+    private var selectedIndex = TimeType.InBed;
     
     // View Lifecycle
     
@@ -31,9 +43,11 @@ class ManualSleepEventViewController: SleepEventViewController, UITableViewDeleg
         super.viewWillAppear(animated)
         let now = NSDate(timeIntervalSinceNow: 0)
         datePicker.date = now
-        if startTime == nil {startTime = now}
-        if endTime == nil {endTime = now}
+        if event.startTime == nil {event.startTime = now}
+        if event.endTime == nil {event.endTime = now}
         updateLabels()
+        (self.childViewControllers.last as ManualSleepEventContainedTableViewController).delegate = self
+        
     }
     
     // Actions
@@ -44,22 +58,22 @@ class ManualSleepEventViewController: SleepEventViewController, UITableViewDeleg
         let format = NSDateFormatter()
         format.dateStyle = .MediumStyle
         format.timeStyle = .MediumStyle
-        startLabel.text = format.stringFromDate(startTime!)
-        endLabel.text = format.stringFromDate(endTime!)
+        startLabel.text = format.stringFromDate(event.startTime!)
+        endLabel.text = format.stringFromDate(event.endTime!)
     }
     
     @IBAction func updateTime(sender: UIDatePicker)
     {
         switch selectedIndex {
         case .InBed:
-            startTime = sender.date
+            event.startTime = sender.date
         case .OutOfBed:
-            endTime = sender.date
+            event.endTime = sender.date
         }
-        if let st = startTime {
-            switch endTime?.isEarlierThan(st) {
+        if let st = event.startTime {
+            switch event.endTime?.isEarlierThan(st) {
             case (let invalid) where invalid == true || invalid == nil:
-                endTime = startTime
+                event.endTime = event.startTime
             default:
                 break
             }
@@ -71,17 +85,26 @@ class ManualSleepEventViewController: SleepEventViewController, UITableViewDeleg
     
     @IBAction func addSleepEvent(sender: AnyObject)
     {
-        recordSleepTimes()
-        
+        event.save()
+        event.resetDefaults()
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    // Table View Delegate
     
-    func tableView(tableView: UITableView,
+}
+
+// This class and protocol are for the view that is contianed in the container view
+private protocol TableViewSelectedIndexDelegate: class {
+    var selectedIndex: TimeType { get set }
+}
+
+class ManualSleepEventContainedTableViewController: UITableViewController {
+    
+    private weak var delegate: TableViewSelectedIndexDelegate?
+    
+    override func tableView(tableView: UITableView,
         didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        
-        selectedIndex = TimeType(rawValue: indexPath.row)!
+        delegate?.selectedIndex = TimeType(rawValue: indexPath.row)!
     }
 }

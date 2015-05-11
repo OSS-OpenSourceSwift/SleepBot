@@ -202,11 +202,10 @@
             </objects>
             <point key="canvasLocation" x="2038" y="1136"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Manual Sleep Event Contained Table View Controller-->
         <scene sceneID="CBU-CP-4Kw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="X4w-40-Pwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="TZy-Up-zm0" sceneMemberID="viewController">
+                <tableViewController id="TZy-Up-zm0" customClass="ManualSleepEventContainedTableViewController" customModule="SleepBot" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TGq-hM-jM4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,6 +262,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4w-40-Pwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2835" y="1136"/>
         </scene>

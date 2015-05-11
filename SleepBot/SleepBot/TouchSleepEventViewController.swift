@@ -31,8 +31,16 @@ enum SleepEventMode {
     
 }
 
-class TouchSleepEventViewController: SleepEventViewController {
+class TouchSleepEventViewController: UIViewController, SleepEventHandler {
 
+    var event: SleepEvent!
+    var healthStore: HKHealthStore? {
+        didSet {
+            event = SleepEvent(healthStore: healthStore!)
+
+        }
+    }
+    
     var mode: SleepEventMode = SleepEventMode.NotStarted {
         willSet {
             let (labelText, buttonText) = newValue.labelStrings()
@@ -70,21 +78,20 @@ class TouchSleepEventViewController: SleepEventViewController {
         println("Update sent by: \(sender)")
         switch mode {
         case .NotStarted:
-            startTime = NSDate(timeIntervalSinceNow: 0)
+            event.startTime = NSDate(timeIntervalSinceNow: 0)
             mode = .InBed
             inProgress = true
         case .InBed:
-            endTime = NSDate(timeIntervalSinceNow: 0)
+            event.endTime = NSDate(timeIntervalSinceNow: 0)
             mode = .OutOfBed
             inProgress = false
-            statTextView.text = startTime?.descriptionBetweenDate(endTime!)
-            println(startTime)
-            println(endTime)
+            statTextView.text = event.startTime?.descriptionBetweenDate(event.endTime!)
+            println(event.startTime)
+            println(event.endTime)
         case .OutOfBed:
-            recordSleepTimes()
+            event.save()
             mode = .Recorded
-            startTime = nil
-            endTime = nil
+            event.resetDefaults()
         default:
             break
         }
@@ -92,8 +99,7 @@ class TouchSleepEventViewController: SleepEventViewController {
     
     deinit {
         if (!inProgress) {
-            startTime = nil
-            endTime = nil
+            event.resetDefaults()
         }
     }
 }

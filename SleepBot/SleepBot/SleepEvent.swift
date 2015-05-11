@@ -9,10 +9,14 @@
 import UIKit
 import HealthKit
 
+@objc protocol SleepEventHandler {
+    var healthStore: HKHealthStore? { get set }
+    // To work with a Sleep Event, a HKHealthStore is required
+}
 
 class SleepEvent {
     
-    weak let healthStore: HKHealthStore
+    private weak var healthStore: HKHealthStore?
     
     init(healthStore: HKHealthStore) {
         self.healthStore = healthStore
@@ -46,10 +50,16 @@ class SleepEvent {
         let sleepType = HKCategoryType.categoryTypeForIdentifier(HKCategoryTypeIdentifierSleepAnalysis)
         let inBedValue = HKCategoryValueSleepAnalysis.InBed.rawValue
         let sleepSample = HKCategorySample(type: sleepType, value: inBedValue, startDate: startTime, endDate: endTime)
-        healthStore.saveObject(sleepSample) { (Bool success, NSError error) -> Void in
+        healthStore?.saveObject(sleepSample) { (Bool success, NSError error) -> Void in
             if (!success) {
                 println(error)
             }
         }
+    }
+    
+    func resetDefaults()
+    {
+        startTime = nil
+        endTime = nil
     }
 }

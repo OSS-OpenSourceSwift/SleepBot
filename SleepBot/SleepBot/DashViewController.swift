@@ -31,7 +31,7 @@ class DashViewController: UIViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let destVC = segue.destinationViewController as? SleepEventViewController {
+        if let destVC = segue.destinationViewController as? SleepEventHandler {
             destVC.healthStore = healthStore
         }
     }
