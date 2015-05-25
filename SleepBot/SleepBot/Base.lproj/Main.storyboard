@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EYV-7C-0yy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Dashboard-->
@@ -148,51 +147,6 @@
             <point key="canvasLocation" x="2038" y="403"/>
         </scene>
         <!--Manual Entry-->
-        <scene sceneID="7MY-Xk-Yx2">
-            <objects>
-                <viewController title="Manual Entry" id="nxa-eu-9Ju" customClass="ManualSleepEventViewController" customModule="SleepBot" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QM3-7L-xkU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Sr9-wV-g4A"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ogn-bx-QHN">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="P8D-nG-i5N">
-                                <rect key="frame" x="0.0" y="438" width="600" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="444529630.58244801">
-                                    <!--2015-02-02 00:27:10 +0000-->
-                                </date>
-                                <connections>
-                                    <action selector="updateTime:" destination="nxa-eu-9Ju" eventType="valueChanged" id="V6j-bS-FqE"/>
-                                </connections>
-                            </datePicker>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nJs-5f-LA8">
-                                <rect key="frame" x="0.0" y="64" width="600" height="366"/>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="nJs-5f-LA8" firstAttribute="top" secondItem="QM3-7L-xkU" secondAttribute="bottom" id="2hw-ML-xJg"/>
-                            <constraint firstItem="nJs-5f-LA8" firstAttribute="leading" secondItem="P8D-nG-i5N" secondAttribute="leading" id="DzK-9R-ZRx"/>
-                            <constraint firstItem="P8D-nG-i5N" firstAttribute="top" secondItem="nJs-5f-LA8" secondAttribute="bottom" constant="8" symbolic="YES" id="Kfl-DV-No0"/>
-                            <constraint firstItem="P8D-nG-i5N" firstAttribute="leading" secondItem="Ogn-bx-QHN" secondAttribute="leadingMargin" constant="-16" id="MAN-Zj-Q6l"/>
-                            <constraint firstItem="Sr9-wV-g4A" firstAttribute="top" secondItem="P8D-nG-i5N" secondAttribute="bottom" id="loH-Em-RBV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="P8D-nG-i5N" secondAttribute="trailing" constant="-16" id="viT-76-t1Y"/>
-                            <constraint firstItem="nJs-5f-LA8" firstAttribute="trailing" secondItem="P8D-nG-i5N" secondAttribute="trailing" id="yKl-xL-OTB"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Manual Entry" id="gme-oC-qj0">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="Ebe-UC-p6o"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MKX-6w-F8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2330" y="1273"/>
-        </scene>
-        <!--Manual Entry-->
         <scene sceneID="CBU-CP-4Kw">
             <objects>
                 <tableViewController id="TZy-Up-zm0" customClass="ManualSleepEventViewController" customModule="SleepBot" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,9 +160,12 @@
                             <date key="date" timeIntervalSinceReferenceDate="453058220.13610297">
                                 <!--2015-05-11 17:30:20 +0000-->
                             </date>
+                            <connections>
+                                <action selector="updateTime:" destination="TZy-Up-zm0" eventType="valueChanged" id="dlR-ui-4oH"/>
+                            </connections>
                         </datePicker>
                         <sections>
-                            <tableViewSection headerTitle="Section-1" footerTitle="Footer" id="q01-Xf-iPv">
+                            <tableViewSection headerTitle="" footerTitle="     " id="q01-Xf-iPv">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="D0o-my-955" detailTextLabel="7Nq-z4-y3x" style="IBUITableViewCellStyleValue1" id="D6Q-Pw-Yls">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -275,7 +232,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4w-40-Pwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1648" y="1133"/>
+            <point key="canvasLocation" x="1628" y="1147"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Y5-qd-iTr">

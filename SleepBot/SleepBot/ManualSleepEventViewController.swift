@@ -37,13 +37,7 @@ class ManualSleepEventViewController: UITableViewController, SleepEventHandler, 
     private var selectedIndex = TimeType.InBed;
     
     // View Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: .Middle)
-
-    }
-    
+        
     override func viewDidAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -52,7 +46,12 @@ class ManualSleepEventViewController: UITableViewController, SleepEventHandler, 
         if event.startTime == nil {event.startTime = now}
         if event.endTime == nil {event.endTime = now}
         updateLabels()
-        
+        self.tableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: true, scrollPosition: .None)
+
+    }
+    
+    deinit {
+        event.resetDefaults()
     }
     
     // Actions
@@ -61,8 +60,8 @@ class ManualSleepEventViewController: UITableViewController, SleepEventHandler, 
     {
         // Use NSDateFormatter
         let format = NSDateFormatter()
-        format.dateStyle = .MediumStyle
-        format.timeStyle = .MediumStyle
+        format.dateStyle = .ShortStyle
+        format.timeStyle = .ShortStyle
         startLabel.text = format.stringFromDate(event.startTime!)
         endLabel.text = format.stringFromDate(event.endTime!)
     }
