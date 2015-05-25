@@ -15,7 +15,7 @@ private enum TimeType: Int {
     case InBed = 0, OutOfBed
 }
 
-class ManualSleepEventViewController: UIViewController, SleepEventHandler, TableViewSelectedIndexDelegate  {
+class ManualSleepEventViewController: UITableViewController, SleepEventHandler, UITableViewDelegate  {
 
     var event: SleepEvent!
     var healthStore: HKHealthStore? {
@@ -38,6 +38,12 @@ class ManualSleepEventViewController: UIViewController, SleepEventHandler, Table
     
     // View Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.selectRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), animated: false, scrollPosition: .Middle)
+
+    }
+    
     override func viewDidAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -46,7 +52,6 @@ class ManualSleepEventViewController: UIViewController, SleepEventHandler, Table
         if event.startTime == nil {event.startTime = now}
         if event.endTime == nil {event.endTime = now}
         updateLabels()
-        (self.childViewControllers.last as ManualSleepEventContainedTableViewController).delegate = self
         
     }
     
@@ -90,21 +95,25 @@ class ManualSleepEventViewController: UIViewController, SleepEventHandler, Table
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    
-}
-
-// This class and protocol are for the view that is contianed in the container view
-private protocol TableViewSelectedIndexDelegate: class {
-    var selectedIndex: TimeType { get set }
-}
-
-class ManualSleepEventContainedTableViewController: UITableViewController {
-    
-    private weak var delegate: TableViewSelectedIndexDelegate?
-    
-    override func tableView(tableView: UITableView,
-        didSelectRowAtIndexPath indexPath: NSIndexPath)
-    {
-        delegate?.selectedIndex = TimeType(rawValue: indexPath.row)!
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.selectedIndex = TimeType(rawValue: indexPath.row)!
     }
 }
+
+// IGNORE FOR NOW
+
+//// This class and protocol are for the view that is contianed in the container view
+//private protocol TableViewSelectedIndexDelegate: class {
+//    var selectedIndex: TimeType { get set }
+//}
+//
+//class ManualSleepEventContainedTableViewController: UITableViewController {
+//    
+//    private weak var delegate: TableViewSelectedIndexDelegate?
+//    
+//    override func tableView(tableView: UITableView,
+//        didSelectRowAtIndexPath indexPath: NSIndexPath)
+//    {
+//        delegate?.selectedIndex = TimeType(rawValue: indexPath.row)!
+//    }
+//}
