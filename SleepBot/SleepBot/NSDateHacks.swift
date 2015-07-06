@@ -88,6 +88,13 @@ extension NSDate {
             return false
         }
     }
+    
+    public func roundDateDownWithComponents(units: NSCalendarUnit) -> NSDate {
+        let cal = NSCalendar.currentCalendar()
+        let comps = cal.components(units, fromDate: self)
+        return cal.dateFromComponents(comps)!
+        
+    }
 
 }
 

@@ -103,14 +103,10 @@
 		41F3144F1A5387A1009BED9B /* SleepBot */ = {
 			isa = PBXGroup;
 			children = (
-				41F314781A54C155009BED9B /* SleepBot.entitlements */,
-				41F314521A5387A1009BED9B /* AppDelegate.swift */,
 				41F314741A539937009BED9B /* DashViewController.swift */,
-				418A93091A8CF5F800D8D1C1 /* Recording events */,
 				417980141A55BFE00044AF68 /* NSDateHacks.swift */,
+				418A93091A8CF5F800D8D1C1 /* Recording events */,
 				41F314561A5387A1009BED9B /* Main.storyboard */,
-				41F314591A5387A1009BED9B /* Images.xcassets */,
-				41F3145B1A5387A1009BED9B /* LaunchScreen.xib */,
 				41F314501A5387A1009BED9B /* Supporting Files */,
 			);
 			path = SleepBot;
@@ -119,6 +115,10 @@
 		41F314501A5387A1009BED9B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				41F314521A5387A1009BED9B /* AppDelegate.swift */,
+				41F3145B1A5387A1009BED9B /* LaunchScreen.xib */,
+				41F314591A5387A1009BED9B /* Images.xcassets */,
+				41F314781A54C155009BED9B /* SleepBot.entitlements */,
 				41F314511A5387A1009BED9B /* Info.plist */,
 			);
 			name = "Supporting Files";

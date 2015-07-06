@@ -12,13 +12,14 @@ import HealthKit
 class DashViewController: UIViewController {
 
     var healthStore: HKHealthStore?
+    let sleepType = HKCategoryType.categoryTypeForIdentifier(HKCategoryTypeIdentifierSleepAnalysis)
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
         if (HKHealthStore.isHealthDataAvailable()) {
             healthStore = HKHealthStore()
-            let sleepType = HKCategoryType.categoryTypeForIdentifier(HKCategoryTypeIdentifierSleepAnalysis)
             let sleepTypeSet = NSSet(object: sleepType)
             
             healthStore?.requestAuthorizationToShareTypes(sleepTypeSet, readTypes: sleepTypeSet) { (Bool success, NSError error) -> Void in
@@ -35,5 +36,6 @@ class DashViewController: UIViewController {
             destVC.healthStore = healthStore
         }
     }
+    
 
 }
