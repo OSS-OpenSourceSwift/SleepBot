@@ -11,6 +11,7 @@
 		417980151A55BFE00044AF68 /* NSDateHacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417980141A55BFE00044AF68 /* NSDateHacks.swift */; };
 		418A93061A8CF46400D8D1C1 /* TouchSleepEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A93051A8CF46400D8D1C1 /* TouchSleepEventViewController.swift */; };
 		418A93081A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418A93071A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift */; };
+		41D8C90E1B4C18BB00B83ADA /* SleepEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D8C90D1B4C18BB00B83ADA /* SleepEventsTableViewController.swift */; };
 		41F314531A5387A1009BED9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F314521A5387A1009BED9B /* AppDelegate.swift */; };
 		41F314581A5387A1009BED9B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F314561A5387A1009BED9B /* Main.storyboard */; };
 		41F3145A1A5387A1009BED9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F314591A5387A1009BED9B /* Images.xcassets */; };
@@ -36,6 +37,7 @@
 		417980141A55BFE00044AF68 /* NSDateHacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateHacks.swift; sourceTree = "<group>"; };
 		418A93051A8CF46400D8D1C1 /* TouchSleepEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchSleepEventViewController.swift; sourceTree = "<group>"; };
 		418A93071A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualSleepEventViewController.swift; sourceTree = "<group>"; };
+		41D8C90D1B4C18BB00B83ADA /* SleepEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepEventsTableViewController.swift; sourceTree = "<group>"; };
 		41F3144D1A5387A1009BED9B /* SleepBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F314511A5387A1009BED9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41F314521A5387A1009BED9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				41F314741A539937009BED9B /* DashViewController.swift */,
 				417980141A55BFE00044AF68 /* NSDateHacks.swift */,
+				41D8C90D1B4C18BB00B83ADA /* SleepEventsTableViewController.swift */,
 				418A93091A8CF5F800D8D1C1 /* Recording events */,
 				41F314561A5387A1009BED9B /* Main.storyboard */,
 				41F314501A5387A1009BED9B /* Supporting Files */,
@@ -251,6 +254,7 @@
 				418A93081A8CF5EE00D8D1C1 /* ManualSleepEventViewController.swift in Sources */,
 				417980151A55BFE00044AF68 /* NSDateHacks.swift in Sources */,
 				418A93061A8CF46400D8D1C1 /* TouchSleepEventViewController.swift in Sources */,
+				41D8C90E1B4C18BB00B83ADA /* SleepEventsTableViewController.swift in Sources */,
 				41F314751A539937009BED9B /* DashViewController.swift in Sources */,
 				411DD6B31AC89FD600A71081 /* SleepEvent.swift in Sources */,
 				41F314731A538CC5009BED9B /* SleepEventViewController.swift in Sources */,
