@@ -33,10 +33,10 @@ enum SleepEventMode {
 
 class TouchSleepEventViewController: UIViewController, SleepEventHandler {
 
-    var event: SleepEvent!
+    var event: ActiveSleepEvent!
     var healthStore: HKHealthStore? {
         didSet {
-            event = SleepEvent(healthStore: healthStore!)
+            event = ActiveSleepEvent(healthStore: healthStore!)
 
         }
     }

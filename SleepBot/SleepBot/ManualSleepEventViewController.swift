@@ -17,10 +17,10 @@ private enum TimeType: Int {
 
 class ManualSleepEventViewController: UITableViewController, SleepEventHandler, UITableViewDelegate  {
 
-    var event: SleepEvent!
+    var event: ActiveSleepEvent!
     var healthStore: HKHealthStore? {
         didSet {
-            event = SleepEvent(healthStore: healthStore!)
+            event = ActiveSleepEvent(healthStore: healthStore!)
             
         }
     }

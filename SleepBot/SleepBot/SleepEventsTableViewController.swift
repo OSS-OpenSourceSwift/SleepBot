@@ -24,15 +24,34 @@ class SleepEventsTableViewController: UITableViewController {
             
             let pred = HKQuery.predicateForCategorySamplesWithOperatorType(.EqualToPredicateOperatorType, value: HKCategoryValueSleepAnalysis.InBed.rawValue)
             
-            let tomorrow = NSDate(timeIntervalSinceNow: 0).dateByAddingTimeInterval(60*60*24)
-            let todayAtMidnight = tomorrow.dateByRoundingDownToComponents(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay)
-            let beginningOfThisYear = tomorrow.dateByRoundingDownToComponents(.CalendarUnitYear)
+            let sortDescriptors = [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)]
             
-            let q = HKSampleQuery(sampleType: nil, predicate: nil, limit: HKObjectQueryNoLimit, sortDescriptors: nil, resultsHandler: nil)
-            
-            let query = HKSampleQuery(sampleType: SLEEP_TYPE, predicate: pred, limit: HKObjectQueryNoLimit, sortDescriptors: [AnyObject]())
+            let query = HKSampleQuery(sampleType: SLEEP_TYPE, predicate: pred, limit: Int(HKObjectQueryNoLimit), sortDescriptors: sortDescriptors)
                 { query, results, error in
                 
+                    if let e = error {
+                        println(e)
+                        return
+                    }
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        
+                        self.sleepTimes.removeAll(keepCapacity: true)
+                        
+                        for sample in results as [HKCategorySample] {
+                        
+                            let event = SleepEvent(startTime: sample.startDate, endTime: sample.endDate)
+                            
+                            self.sleepTimes.append(event)
+                        }
+                        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                    
+                    
+                    
             }
             
         } else {
